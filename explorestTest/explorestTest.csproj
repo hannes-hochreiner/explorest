@@ -29,9 +29,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
+    <Compile Include="MainPresenterTest.cs" />
+    <Compile Include="MainViewFake.cs" />
+    <Compile Include="WebRequestServiceFake.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\explorest\explorest.csproj">
+      <Project>{2ADDADF6-457D-49EB-9742-D21340E8A393}</Project>
+      <Name>explorest</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

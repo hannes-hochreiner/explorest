@@ -1,16 +1,14 @@
 ﻿using System;
-using Gtk;
+using System.Windows.Forms;
 
 namespace explorest
 {
-	class MainClass
+	class MainClass : Form
 	{
 		public static void Main (string[] args)
 		{
-			Application.Init ();
-			MainWindow win = new MainWindow ();
-			win.Show ();
-			Application.Run ();
+            var win = new MainWindowForms(new MainPresenter(new WebRequestService()));
+            Application.Run(win);
 		}
 	}
 }
